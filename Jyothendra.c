@@ -1,36 +1,53 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-
-
-int main(int argc, char *argv[])
-{
-  float num1, num2;
-  char operator;
-  float answer;
-
-  printf("Enter calculation:\n\n");
-  scanf("%f %c %f", &num1, &operator, & num2);
-
-  switch(operator){
-    case '/': answer = num1/num2;
-      break;
-    case '*': answer = num1*num2;
-      break;
-    case '+': answer = num1+num2;
-      break;
-    case '-': answer = num1-num2;
-      break;
-    case '^': answer = pow(num1,num2);
-      break;
-    case 'r': answer = sqrt(num2);
-      break;
-    default: goto fail; }
-  printf("%.9g%c%.9g =  %.6g\n\n",num1,operator, num2, answer);
-  goto exit;
- fail:
-  printf("Fail.\n");
- exit:
-  return 0;
+#include<stdio.h>
+#include<stdlib.h>
+int main() {
+    int num1,num2=10,c;
+    printf("Enter num1 value: ");
+    scanf("%d", &num1);
+    printf("Enter num2 value: ");
+    scanf("%d", &num2);
+    printf("Enter operation: ");
+    scanf("%d", &c);
+switch(c){
+    case 1:
+    printf("%d", num1+num2);
+    printf("\n%d", num1-num2);
+    printf("\n%d", num1%num2);
+    printf("\n%d", num1*num2);
+    printf("\n%d", num1/num2);
+    break;
+    case 2:
+    printf("%d", num1<num2);
+    printf("\n%d", num1>num2);
+    printf("\n%d", num1<=num2);
+    printf("\n%d", num1>=num2);
+    printf("\n%d", num1==num2);
+    printf("\n%d", num1!=num2);
+    break;
+    case 3:
+    printf("%d", num1&&num2);
+    printf("\n%d", num1||num2);
+    printf("%d", num1=!num2);
+    break;
+    case 4:
+    printf("%d", num1&num2);
+    printf("\n%d", num1|num2);
+    printf("\n%d", num1<<num2);
+    printf("\n%d", num1>>num2);
+    break;
+    case 5:
+    printf("%d", num1++);
+    printf("\n%d", num1--);
+    printf("\n%d", num2++);
+    printf("\n%d", num2--);
+    break;
+    case 6:
+    printf("%d", num1=20);
+    printf("\n%d", num1+=20);
+    case 8: 
+    exit(0);
+    default:
+    printf("Enter correct choice value: ");
+}
+    return 0;
 }
